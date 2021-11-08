@@ -1,4 +1,4 @@
-# RSS Cache Detection
+# Point Process Cache Detection
 
 ## Overview
 Please see `method.ipynb` for a summary and discussion of my approach. In general, this is for estimating the caching interval of a website feed, but modelling the feed as a Poisson Point process. First this is done directly by fittung an exponential distribution to the times feed entriesa are created. Second this is done by using a threshold clustering algorithms to estimate which entries were uploaded in the same cache, but the entry is created after polling at a slightly different time due to any latency/noise. The threshold clustering has its threshold parameter tuning by optimising F1-score on the classification of whether a feed interval is >600s or not.
